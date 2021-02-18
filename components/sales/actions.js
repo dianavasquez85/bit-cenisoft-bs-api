@@ -24,13 +24,13 @@ const getSale = (req, res) => {
   })
 }
 
-const getClients = (req, res) => {
+const getSales = (req, res) => {
   let query = req.query;
   if (req.query.name) {
     query = { name: new RegExp(`.*${req.query.name}.*`, 'i') };
   }
 
-  Client.find(query, (error, clients) => {
+  Sale.find(query, (error, clients) => {
     if (error) {
       res.status(404).send(error);
     } else {
@@ -39,4 +39,4 @@ const getClients = (req, res) => {
   })
 }
 
-module.exports = { createClient, getClient, getClients };
+module.exports = { createSale, getSale, getSales };

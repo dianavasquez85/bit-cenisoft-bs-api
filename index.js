@@ -22,6 +22,7 @@ app.use(bodyParser.json())
 // Instalación de rutas en el router principal
 app.use('/books', bookRoutes)
 app.use('/clients', clientRoutes)
+app.use('/sales', salesRoutes)
 app.use('/details', detailsRoutes)
 app.use('/covers', express.static('covers'))
 
